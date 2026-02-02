@@ -1,28 +1,22 @@
 #include<stdio.h>
 int main(){
-    int size;
-    scanf("%d",&size);
-    int arr[size];
-    int sum=0;
-    for(int i=0;i<size;i++){
-        scanf("%d",&arr[i]);
-    }
-    int count=0;
-    for(int j=0;j<size;j++){
-        for(int k=j+1;k<size;k++){
-        if(arr[j]==arr[k]){
-            for(int s=1;s<size-1;s++){
-                arr[s]=arr[s+1];
+        int size;
+        scanf("%d",&size);
+        int arr[size];
+        for(int i=0;i<size;i++){
+           scanf("%d",&arr[i]); 
+        }
+        int max=1;
+        for(int j=1;j<size;j++){
+            if(arr[j]>arr[j-1]){
+                    max++;
+                
             }
-            size--;
-            k--;
-        }
-        }
-    }
-    for(int p=0;p<size;p++){
-        count++;
-    }
-    printf("%d",count);
-    return 0;
+            else{
+                max=1;
+            }
 
-}
+            }
+        printf("%d",max);
+        return 0;
+    }
