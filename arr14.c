@@ -6,18 +6,20 @@ int main(){
     for(int i=0;i<size;i++){
         scanf("%d",&arr[i]);
     }
-    int sum=0;
-    int avg;
-    int count=0;
+    int max;
     for(int j=0;j<size;j++){
-        sum+=arr[j];
+         max=arr[0];
+         if(arr[j]>0){
+            if(arr[j]<max){
+                max=arr[j];
+            }
+         }
     }
-     avg=sum/size;
-    for(int s=0;s<size;s++){
-        if(arr[s]>avg){
-            count++;
-        }
+    if(max>0){
+    printf("%d",max);
     }
-    printf("%d",count);
+    else{
+        printf("no positive");
+    }
     return 0;
 }
